@@ -8,6 +8,29 @@ function getRadioValue(name) {
     return null; // Return null if no radio button is checked
 }
 
+async function sendData(data){
+    try {
+        const response = await fetch('http://localhost:3001/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.text();
+        console.log(result);
+        return result
+        // document.getElementById('responseContainer').innerText = result;
+    } catch (error) {
+        console.error('Error sending data:', error);
+    }
+}
+
 document.getElementById("submit").addEventListener("click", function(event) {
     console.log("jolljds");
     event.preventDefault(); // Prevent the default form submission
@@ -42,4 +65,7 @@ document.getElementById("submit").addEventListener("click", function(event) {
     console.log(formResults);
     window.location.href = 'index.html';
 
+    const careerSoln = sendData(formResults)
+
 });
+

@@ -5,7 +5,7 @@ function updateResults(){
         const data = JSON.parse(careerSolution);
         
         // Update the page content
-        const resultsDiv = document.getElementById('results');
+        const resultsDiv = document.getElementById('summary');
         resultsDiv.innerText = data; // Or however you want to display the data
         
         // Optionally, you can clear the stored data

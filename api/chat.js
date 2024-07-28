@@ -5,12 +5,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3001;
 
-const cors = require('cors')
-app.use(cors({
-    origin: 'http://localhost:5501', // Replace with your frontend's local URL and port
-    methods: 'GET,POST,PUT,DELETE',  // Specify allowed methods (optional)
-    credentials: true                 // Include this if your requests require credentials
-}));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:5501'); // Allow requests from your frontend
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE'); // Allow these methods
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Allow these headers
+    next();
+});
+
 
 app.use(bodyParser.json());
 

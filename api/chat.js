@@ -6,7 +6,7 @@ const app = express();
 const port = 3001;
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5501/future-choice/form.html'); // Allow requests from your frontend
+    res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5501/'); // Allow requests from your frontend
     res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE'); // Allow these methods
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Allow these headers
     next();

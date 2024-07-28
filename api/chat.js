@@ -26,7 +26,7 @@ app.post('/api/chat', async (req, res) => {
         const {user_data} = req.body
         // console.log(user_data)
 
-        msg_content = `Based on the following inputs by a new cs graduate give top 2 cs jobs that would be a good fit in 20 words or less:"+
+        msg_content = `Based on the following inputs by a new cs graduate give top 2 cs jobs that would be a good fit in 20 words or less:
                        Web Development:Rating:${user_data[1]}
                        Database Management:Rating:${user_data[2]} 
                        Data Structures and Algorithms:Rating:${user_data[3]} 

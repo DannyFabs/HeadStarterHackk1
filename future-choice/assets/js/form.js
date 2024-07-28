@@ -10,7 +10,7 @@ function getRadioValue(name) {
 
 async function sendData(data){
     try {
-        const response = await fetch('http://localhost:3001/chat', {
+        const response = await fetch('http://headstarterhackk1-2.onrender.com:3001/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ function validateForm() {
 }
 
 
-document.getElementById("submit").addEventListener("click", function(event) {
+document.getElementById("submit").addEventListener("click", async function(event) {
     event.preventDefault(); // Prevent the default form submission
 
     if (validateForm()) {
@@ -87,9 +87,9 @@ document.getElementById("submit").addEventListener("click", function(event) {
         console.log(formResults);
 
         // Send data and navigate to the result page
-
+        const careerSoln =  await sendData(formResults);
+        localStorage.setItem('careerSolution', JSON.stringify(careerSoln));
         window.location.href = 'Result.html';
-
     }
 });
 

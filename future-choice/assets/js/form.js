@@ -88,7 +88,7 @@ document.getElementById("submit").addEventListener("click", function(event) {
 
         // Send data and navigate to the result page
 
-            window.location.href = 'Result.html';
+        window.location.href = 'Result.html';
 
     }
 });

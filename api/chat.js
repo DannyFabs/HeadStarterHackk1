@@ -12,6 +12,7 @@ app.use((req, res, next) => {
     next();
 });
 
+app.options('*', cors()); // This ensures that all OPTIONS requests are handled correctly
 
 app.use(bodyParser.json());
 

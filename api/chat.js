@@ -5,6 +5,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3001;
 
+const cors = require('cors')
+app.use(cors({
+    origin: 'http://localhost:5501', // Replace with your frontend's local URL and port
+    methods: 'GET,POST,PUT,DELETE',  // Specify allowed methods (optional)
+    credentials: true                 // Include this if your requests require credentials
+}));
+
 app.use(bodyParser.json());
 
 const inference = new HfInference("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");

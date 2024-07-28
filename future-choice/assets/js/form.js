@@ -10,18 +10,18 @@ function getRadioValue(name) {
 
 async function sendData(data){
     try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 100000); // 30 seconds timeout
-        const response = await fetch('http://head-starter-hackk1.vercel.app:3001/chat', {
+        // const controller = new AbortController();
+        // const timeoutId = setTimeout(() => controller.abort(), 100000); // 30 seconds timeout
+        const response = await fetch('https://head-starter-hackk1-m6ua6oj39-dannyfabs-projects.vercel.app/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
-            signal: controller.signal,
+            // signal: controller.signal,
         });
 
-        clearTimeout(timeoutId); // Clear the timeout if the request completes
+        // clearTimeout(timeoutId); // Clear the timeout if the request completes
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

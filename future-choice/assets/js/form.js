@@ -89,38 +89,8 @@ document.getElementById("submit").addEventListener("click", async function(event
             22: getRadioValue('job_value')
         };
 
-        // Log the results to the console (optional)
-        // console.log(formResults);
-
-
-        // msg_content = `Based on the following inputs by a new cs graduate give top 2 cs jobs that would be a good fit in 20 words or less:
-        // Web Development:Rating:${user_data[1]}
-        // Database Management:Rating:${user_data[2]} 
-        // Data Structures and Algorithms:Rating:${user_data[3]} 
-        // Systems Design:Rating:${user_data[4]} 
-        // Software Development Practices:Rating:${user_data[5]} 
-        // Networking and Security:Rating:${user_data[6]} 
-        // Operating Systems::Rating:${user_data[7]} 
-        // Mobile Development::Rating:${user_data[8]} 
-        // Machine Learning and Data Science:Rating:${user_data[9]} 
-        // Problem Solving:Rating:${user_data[10]} 
-        // Communication:Rating:${user_data[11]}
-        // Creativity and design:Rating:${user_data[12]}
-        // Leadership:Rating:${user_data[13]}
-        // Time management:Rating:${user_data[14]} 
-        // Analytical thinking:Rating:${user_data[15]} 
-        // Adaptability:Rating:${user_data[16]}
-        // How do you prefer to work?Answer:${user_data[17]}
-        // How do you prefer to learn new skills?Answer:${user_data[18]}
-        // What type of work environment do you prefer?Answer:${user_data[19]}
-        // How do you approach problem-solving?Answer:${user_data[20]}
-        // Are you interested in obtaining additional certifications or pursuing a graduate degree?${user_data[21]}
-        // What do you value most in a job?Answer:${user_data[22]}`
-
-        // console.log(msg_content);
-
         // Send data and navigate to the result page
-        const msg_content = `Based on the following inputs by a new CS graduate, give top 2 CS jobs that would be a good fit in 20 words or less: ` +
+        const msg_content = `Based on the following inputs by a new CS graduate, give top 2 CS jobs that would be a good fit for a NEW CS GRAD with 1 sentence justification: ` +
         `Web Development: Rating: ${user_data[1]}, ` +
         `Database Management: Rating: ${user_data[2]}, ` +
         `Data Structures and Algorithms: Rating: ${user_data[3]}, ` +

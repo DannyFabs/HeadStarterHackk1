@@ -1,11 +1,11 @@
 const express = require('express');
 const { HfInference } = require("@huggingface/inference");
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const port = 3001
 
-const cors = require('cors');
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*'); // Allow requests from your frontend

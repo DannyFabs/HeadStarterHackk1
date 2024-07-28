@@ -31,45 +31,65 @@ async function sendData(data){
     }
 }
 
+function validateForm() {
+    const requiredFields = [
+        'web_development', 'database_management', 'data_structures_and_algorithms',
+        'systems_design', 'software_development_practices', 'networking_and_security',
+        'operating_sys', 'mobile_dev', 'problem_solving', 'critical_thinking',
+        'communication', 'teamwork', 'leadership', 'creativity', 'adaptability',
+        'attention_to_detail', 'work_environment', 'learning_style', 'work_style',
+        'problem_solving_approach', 'certifications', 'job_value'
+    ];
+
+    for (const fieldName of requiredFields) {
+        if (!getRadioValue(fieldName)) {
+            alert('Filling all fields is required');
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
 document.getElementById("submit").addEventListener("click", function(event) {
-    console.log("jolljds");
     event.preventDefault(); // Prevent the default form submission
 
-    // Create an object to store the results
-    const formResults = {
-        1: getRadioValue('web_development'),
-        2: getRadioValue('database_management'),
-        3: getRadioValue('data_structures_and_algorithms'),
-        4: getRadioValue('systems_design'),
-        5: getRadioValue('software_development_practices'),
-        6: getRadioValue('networking_and_security'),
-        7: getRadioValue('operating_sys'),
-        8: getRadioValue('mobile_dev'),
-        9: getRadioValue('problem_solving'),
-        10: getRadioValue('critical_thinking'),
-        11: getRadioValue('communication'),
-        12: getRadioValue('teamwork'),
-        13: getRadioValue('leadership'),
-        14: getRadioValue('creativity'),
-        15: getRadioValue('adaptability'),
-        16: getRadioValue('attention_to_detail'),
-        17: getRadioValue('work_environment'),
-        18: getRadioValue('learning_style'),
-        19: getRadioValue('work_style'),
-        20: getRadioValue('problem_solving_approach'),
-        21: getRadioValue('certifications'),
-        22: getRadioValue('job_value')
-    };
+    if (validateForm()) {
+        // Create an object to store the results
+        const formResults = {
+            1: getRadioValue('web_development'),
+            2: getRadioValue('database_management'),
+            3: getRadioValue('data_structures_and_algorithms'),
+            4: getRadioValue('systems_design'),
+            5: getRadioValue('software_development_practices'),
+            6: getRadioValue('networking_and_security'),
+            7: getRadioValue('operating_sys'),
+            8: getRadioValue('mobile_dev'),
+            9: getRadioValue('problem_solving'),
+            10: getRadioValue('critical_thinking'),
+            11: getRadioValue('communication'),
+            12: getRadioValue('teamwork'),
+            13: getRadioValue('leadership'),
+            14: getRadioValue('creativity'),
+            15: getRadioValue('adaptability'),
+            16: getRadioValue('attention_to_detail'),
+            17: getRadioValue('work_environment'),
+            18: getRadioValue('learning_style'),
+            19: getRadioValue('work_style'),
+            20: getRadioValue('problem_solving_approach'),
+            21: getRadioValue('certifications'),
+            22: getRadioValue('job_value')
+        };
 
-    // Log the results to the console (optional)
-    console.log(formResults);
+        // Log the results to the console (optional)
+        console.log(formResults);
 
-    const careerSoln = sendData(formResults)
-    
-    localStorage.setItem('careerSolution', JSON.stringify(careerSoln));
-
-    window.location.href = 'Result.html';
-
+        // Send data and navigate to the result page
+        sendData(formResults).then(result => {
+            updateResults(result);
+            window.location.href = 'Result.html';
+        });
+    }
 });
-
 

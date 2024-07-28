@@ -31,6 +31,7 @@ async function sendData(data){
     }
 }
 
+
 function validateForm() {
     const requiredFields = [
         'web_development', 'database_management', 'data_structures_and_algorithms',

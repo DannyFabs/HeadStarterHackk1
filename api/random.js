@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 const inference = new HfInference("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");
 
-app.get('/random',async(req,res) =>{
+app.get('/api/random',async(req,res) =>{
     try {
         // Generate some data to send back, for example, a random number
         const randomNumber = Math.floor(Math.random() * 100);

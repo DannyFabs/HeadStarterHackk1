@@ -10,7 +10,7 @@ function getRadioValue(name) {
 
 async function sendData(data){
     try {
-        const response = await fetch('http://headstarterhackk1-2.onrender.com:3001/chat', {
+        const response = await fetch('http://headstarterhackk1-5.onrender.com:3001/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -117,9 +117,10 @@ document.getElementById("submit").addEventListener("click", async function(event
         // Are you interested in obtaining additional certifications or pursuing a graduate degree?${user_data[21]}
         // What do you value most in a job?Answer:${user_data[22]}`
 
-        console.log(msg_content);
+        // console.log(msg_content);
 
         // Send data and navigate to the result page
+        const msg_content = "helloworld"
         const careerSoln =  await sendData(msg_content);
         localStorage.setItem('careerSolution', JSON.stringify(careerSoln));
         window.location.href = 'Result.html';

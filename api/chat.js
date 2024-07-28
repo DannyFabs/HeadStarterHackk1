@@ -51,7 +51,7 @@ app.post('/api/chat', async (req, res) => {
         //                Are you interested in obtaining additional certifications or pursuing a graduate degree?${user_data[21]}
         //                What do you value most in a job?Answer:${user_data[22]}`
         
-        console.log(msg_content)
+        // console.log(msg_content)
         // const messages = [{ role: "user", content: req.body}];
         const response = await inference.chatCompletionStream({
             model: "microsoft/Phi-3-mini-4k-instruct",

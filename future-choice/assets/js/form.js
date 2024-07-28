@@ -10,13 +10,18 @@ function getRadioValue(name) {
 
 async function sendData(data){
     try {
-        const response = await fetch('http://headstarterhackk1-5.onrender.com:3001/chat', {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 100000); // 30 seconds timeout
+        const response = await fetch('http://head-starter-hackk1-mk7glagap-dannyfabs-projects.vercel.app:3001/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
+            signal: controller.signal,
         });
+
+        clearTimeout(timeoutId); // Clear the timeout if the request completes
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

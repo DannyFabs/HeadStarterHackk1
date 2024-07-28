@@ -31,6 +31,12 @@ async function sendData(data){
     }
 }
 
+function updateResults(result){
+    var summaryDiv = document.getElementById('summary')
+
+    summaryDiv.innerText = result
+}
+
 document.getElementById("submit").addEventListener("click", function(event) {
     console.log("jolljds");
     event.preventDefault(); // Prevent the default form submission
@@ -66,6 +72,7 @@ document.getElementById("submit").addEventListener("click", function(event) {
     window.location.href = 'Result.html';
 
     const careerSoln = sendData(formResults)
-
+    
+    updateResults(careerSoln)
 });
 

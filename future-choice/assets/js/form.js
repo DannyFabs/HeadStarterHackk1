@@ -12,7 +12,7 @@ async function sendData(data){
     try {
         // const controller = new AbortController();
         // const timeoutId = setTimeout(() => controller.abort(), 100000); // 30 seconds timeout
-        const response = await fetch('https://head-starter-hackk1-m6ua6oj39-dannyfabs-projects.vercel.app/api/chat', {
+        const response = await fetch('https://head-starter-hackk1.vercel.app/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

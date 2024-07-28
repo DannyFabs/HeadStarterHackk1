@@ -87,10 +87,9 @@ document.getElementById("submit").addEventListener("click", function(event) {
         console.log(formResults);
 
         // Send data and navigate to the result page
-        sendData(formResults).then(result => {
-            updateResults(result);
+
             window.location.href = 'Result.html';
-        });
+
     }
 });
 

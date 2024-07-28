@@ -63,7 +63,7 @@ document.getElementById("submit").addEventListener("click", function(event) {
 
     // Log the results to the console (optional)
     console.log(formResults);
-    window.location.href = 'index.html';
+    window.location.href = 'Result.html';
 
     const careerSoln = sendData(formResults)
 
